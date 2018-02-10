@@ -3,6 +3,7 @@
     "",
     "\\include",
     "\\include\\com",
+<<<<<<< Updated upstream
     "\\src",
     "\\src\\com",
     "\\src\\com\\ethanbreit",
@@ -12,5 +13,15 @@
     "\\src\\com\\ethanbreit\\ui\\widgets"
   ],
   "SelectedNode": "\\src\\com\\ethanbreit\\ui\\widgets\\scene_widget.cpp",
+=======
+    "\\include\\com\\ethanbreit",
+    "\\include\\com\\ethanbreit\\ui",
+    "\\libs",
+    "\\libs\\compiled",
+    "\\libs\\headers",
+    "\\libs\\headers\\ge"
+  ],
+  "SelectedNode": "\\libs\\git",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }

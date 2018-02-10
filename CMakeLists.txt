@@ -30,6 +30,7 @@ add_executable(Green_Editor  ${SOURCE})
 ###
 
 
+<<<<<<< Updated upstream
 # Disable building extras we won't need (pure C++ project)
 #set(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL " " FORCE)
 #set(NANOGUI_BUILD_PYTHON  OFF CACHE BOOL " " FORCE)
@@ -55,6 +56,23 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Libraries.cmake)
 
 green_engine_libs(includes libraries)
 
+=======
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/Libraries.cmake)
+green_engine_libs(includes libraries)
+
+# Disable building extras we won't need (pure C++ project)
+set(NANOGUI_BUILD_EXAMPLE OFF CACHE BOOL " " FORCE)
+set(NANOGUI_BUILD_PYTHON  OFF CACHE BOOL " " FORCE)
+set(NANOGUI_INSTALL       OFF CACHE BOOL " " FORCE)
+
+# Add the configurations from nanogui
+add_subdirectory(ext/nanogui)
+
+# For reliability of parallel build, make the NanoGUI targets dependencies
+set_property(TARGET glfw glfw_objects nanogui PROPERTY FOLDER "dependencies")
+
+
+>>>>>>> Stashed changes
 #GE2
 
 list(APPEND libraries ${CMAKE_CURRENT_SOURCE_DIR}/Green_Engine_2.lib)
@@ -78,9 +96,12 @@ endforeach()
 
 #file(COPY "res" DESTINATION "${CMAKE_BINARY_DIR}")
 
+<<<<<<< Updated upstream
 if(MSVC)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
 endif(MSVC)
 
+=======
+>>>>>>> Stashed changes
 
 set_target_properties(Green_Editor PROPERTIES LINKER_LANGUAGE "CXX")

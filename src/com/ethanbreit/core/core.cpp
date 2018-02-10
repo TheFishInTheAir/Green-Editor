@@ -2,8 +2,11 @@
 #include "graphics/meshes/debug/DebugVertexTriangleMesh.h"
 #include "memory/GlobalMemory.h"
 #include "ui/ui.h"
+<<<<<<< Updated upstream
 #include "input/KeyboardHandler.h"
 #include "input/MouseHandler.h"
+=======
+>>>>>>> Stashed changes
 
 
 using namespace ge;
@@ -12,8 +15,11 @@ using namespace ge;
 GraphicsCore* Core::gc;
 
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
 Core::Core()
 {
 	GlobalRuntime::ge_REGISTER_RUNTIME_HANDLER;
@@ -22,7 +28,11 @@ Core::Core()
 
 void Core::update()
 {
+<<<<<<< Updated upstream
 	viewSwitch();
+=======
+	
+>>>>>>> Stashed changes
 }
 
 void Core::prerender()
@@ -31,17 +41,24 @@ void Core::prerender()
 	static bool initialised = false;
 	if(!initialised)
 	{
+<<<<<<< Updated upstream
 		initialised = true;
+=======
+>>>>>>> Stashed changes
 		gc->window->makeCurrentThread(GlobalMemory::get("ge_render_context_runtime").getRawData<Runtime>());
 		gc->window->setClearColour({ 0.2f, 0.3f, 0.3f }); /// self explanatory (has to be here becuase OpenGL is bad with multithreading)
 
 
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 		//INIT THINGS
 		ui::init();
 	}
 
 	gc->window->clear();
+<<<<<<< Updated upstream
 	glEnable(GL_DEPTH_TEST);
 }
 
@@ -87,3 +104,11 @@ void Core::viewSwitch()
 		first = true;
 	}
 }
+=======
+}
+
+void Core::postrender()
+{
+	gc->window->swap();
+}
+>>>>>>> Stashed changes

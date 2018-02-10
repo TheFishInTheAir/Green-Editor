@@ -1,5 +1,6 @@
 #include <ui/ui.h>
 
+<<<<<<< Updated upstream
 
 #define NK_INCLUDE_FIXED_TYPES
 #define NK_INCLUDE_STANDARD_IO
@@ -20,10 +21,15 @@
 #include "nuklear_glfw_gl3.h"
 #include "input/MouseHandler.h"
 #include "graphics/types/lights/LightDirectional.h"
+=======
+#include <nanogui/nanogui.h>
+#include "nanogui/common.h"
+>>>>>>> Stashed changes
 
 using namespace ge;
 
 GraphicsCore* ui::gc;
+<<<<<<< Updated upstream
 struct nk_context *ctx;
 struct nk_colorf bg;
 
@@ -34,10 +40,18 @@ LightDirectional* ld;
 
 void ui::init()
 {
+=======
+nanogui::Screen *screen = nullptr;
+
+void ui::init()
+{
+	GlobalRuntime::ge_REGISTER_RUNTIME_HANDLER;
+>>>>>>> Stashed changes
 
 	ui *u = new ui();
 	GlobalMemory::insert("ui", { u, ReadableMemType::OTHER });
 
+<<<<<<< Updated upstream
 	gc = GlobalMemory::get("ge_renderer_instance").getRawData<GraphicsCore>();
 	
 	GlobalMemory::get("ge_update_runtime_group").getRawData<RuntimeGroup>()->ge_RUNTIME_GROUP_INSERT_HEAP(u);
@@ -70,10 +84,22 @@ void ui::preRender()
 {
 	nk_glfw3_new_frame();
 
+=======
+	GlobalMemory::get("ge_update_runtime_group").getRawData<RuntimeGroup>()->ge_RUNTIME_GROUP_INSERT_HEAP(u);
+	GlobalMemory::get("ge_render_runtime_group").getRawData<RuntimeGroup>()->ge_RUNTIME_GROUP_INSERT_HEAP(u);
+
+
+	nanogui::init();
+
+
+	screen = new nanogui::Screen();
+	screen->initialize(((GL::Window*)gc->window)->_window, true);
+>>>>>>> Stashed changes
 }
 
 void ui::render()
 {
+<<<<<<< Updated upstream
 
 
 	
@@ -127,6 +153,10 @@ void ui::render()
 void ui::postRender()
 {
 	nk_glfw3_render(NK_ANTI_ALIASING_ON, MAX_VERTEX_BUFFER, MAX_ELEMENT_BUFFER);
+=======
+	screen->drawContents();
+	screen->drawWidgets();
+>>>>>>> Stashed changes
 }
 
 void ui::update()

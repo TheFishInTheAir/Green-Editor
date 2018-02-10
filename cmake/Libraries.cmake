@@ -41,7 +41,11 @@ find_package(GLFWosd REQUIRED)
 if (GLFW_FOUND)
     message("${GLFW_INCLUDE_DIR} and ${GLFW_LIBRARY}\n")
     list(APPEND Green_Engine_INCLUDES ${GLFW_INCLUDE_DIR})
+<<<<<<< Updated upstream
     list(APPEND Green_Engine_LIBS ${GLFW_LIBRARY})
+=======
+    #list(APPEND Green_Engine_LIBS ${GLFW_LIBRARY}) wait why
+>>>>>>> Stashed changes
 
 endif()
 
