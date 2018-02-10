@@ -1,3 +1,0 @@
-[submodule "libs/git/nanogui"]
-	path = libs/git/nanogui
-	url = https://github.com/wjakob/nanogui.git
