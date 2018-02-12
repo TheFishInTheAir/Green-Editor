@@ -5,13 +5,10 @@
 #include "memory/GlobalMemory.h"
 
 #include <core/core.h>
-<<<<<<< Updated upstream
 #include "graphics/Camera.h"
 #include "debug/FreeMove.h"
 #include "graphics/types/lights/LightDirectional.h"
 #include "test.h"
-=======
->>>>>>> Stashed changes
 
 using namespace ge;
 
@@ -28,22 +25,15 @@ int main()
 	wci.width = 1920;
 	wci.glMajorVersion = 4;
 	wci.glMinorVersion = 4;
-<<<<<<< Updated upstream
 	wci.hiddenCursor = false;
-=======
 
->>>>>>> Stashed changes
 	gc->window->init(wci);
 	gc->window->setClearColour({ 0.2f, 0.3f, 0.3f });
 
 
 	//Runtime Creation
 	Runtime *update = new Runtime("update", 60);
-<<<<<<< Updated upstream
 	Runtime *render = new Runtime("render", 60);
-=======
-	Runtime *render = new Runtime("render");
->>>>>>> Stashed changes
 	Runtime *load = new Runtime("load", 1);
 
 	GlobalMemory::insert("ge_render_context_runtime", GlobalMemory::MemItem(render, ReadableMemType::OTHER));
@@ -56,7 +46,6 @@ int main()
 	RuntimeGroup *renderGroup		= new RuntimeGroup();
 	RuntimeGroup *postRenderGroup	= new RuntimeGroup();
 
-<<<<<<< Updated upstream
 
 	RuntimeGroup *preUIRenderGroup = new RuntimeGroup();
 	RuntimeGroup *UIrenderGroup = new RuntimeGroup();
@@ -65,8 +54,7 @@ int main()
 
 	RuntimeGroup *finalRenderGroup = new RuntimeGroup();
 
-=======
->>>>>>> Stashed changes
+
 	RuntimeGroup *loadGroup			= new RuntimeGroup();
 
 	update->insertGroup(updateGroup);
@@ -75,15 +63,14 @@ int main()
 	render->insertGroup(renderGroup,	1);
 	render->insertGroup(postRenderGroup,2);
 
-<<<<<<< Updated upstream
+
 	render->insertGroup(preUIRenderGroup, 3);
 	render->insertGroup(UIrenderGroup, 4);
 	render->insertGroup(postUIRenderGroup, 5);
 
 	render->insertGroup(finalRenderGroup, 6);
 
-=======
->>>>>>> Stashed changes
+
 	load->insertGroup(loadGroup);
 
 	updateGroup->runtimeId		= UPDATE;
@@ -92,8 +79,7 @@ int main()
 	preRenderGroup->runtimeId	= PRE_RENDER;
 	renderGroup->runtimeId		= RENDER;
 	postRenderGroup->runtimeId	= POST_RENDER;
-<<<<<<< Updated upstream
-	
+
 	preUIRenderGroup->runtimeId = 8;
 	UIrenderGroup->runtimeId = 9;
 	postUIRenderGroup->runtimeId = 10;
@@ -109,11 +95,6 @@ int main()
 	GlobalMemory::insert("ge_preuirender_runtime_group", { preUIRenderGroup,ReadableMemType::OTHER });
 	GlobalMemory::insert("ge_uirender_runtime_group", { UIrenderGroup,ReadableMemType::OTHER });
 	GlobalMemory::insert("ge_postuirender_runtime_group", { postUIRenderGroup,ReadableMemType::OTHER });
-=======
-	GlobalMemory::insert("ge_prerender_runtime_group", { preRenderGroup,ReadableMemType::OTHER });
-	GlobalMemory::insert("ge_render_runtime_group", { renderGroup,ReadableMemType::OTHER });
-	GlobalMemory::insert("ge_postrender_runtime_group", { postRenderGroup,ReadableMemType::OTHER });
->>>>>>> Stashed changes
 
 	loadGroup->runtimeId		= LOADER;
 	GlobalMemory::insert("ge_load_context_runtime", { load,ReadableMemType::OTHER });
@@ -121,7 +102,6 @@ int main()
 	//Core to Runtime Linking
 
 	preRenderGroup	->ge_RUNTIME_GROUP_INSERT_HEAP(core);
-<<<<<<< Updated upstream
 	finalRenderGroup	->ge_RUNTIME_GROUP_INSERT_HEAP(core);
 	updateGroup		->ge_RUNTIME_GROUP_INSERT_HEAP(core);
 
@@ -167,12 +147,10 @@ int main()
 
 	new test(fm,camera);
 
-=======
+
 	postRenderGroup	->ge_RUNTIME_GROUP_INSERT_HEAP(core);
 	updateGroup		->ge_RUNTIME_GROUP_INSERT_HEAP(core);
 
-
->>>>>>> Stashed changes
 	while (true)
 	{
 		gc->window->poll();

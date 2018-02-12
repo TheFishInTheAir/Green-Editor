@@ -4,6 +4,7 @@
 #resources
 #RawResources/
 
+.vs/
 
 # User-specific files
 *.suo
