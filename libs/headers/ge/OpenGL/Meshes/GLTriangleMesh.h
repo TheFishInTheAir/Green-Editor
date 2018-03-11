@@ -10,6 +10,7 @@
 #include "OpenGL/types/GLUniform.h"
 #include "OpenGL/types/GLShaderGroup.h"
 #include "OpenGL/types/GLIndexBuffer.h"
+#include "OpenGL/types/GLCubeMap.h"
 
 namespace ge
 {
@@ -20,7 +21,7 @@ namespace ge
             GL::ShaderGroup* shaderGroup;
             GL::IndexBuffer* indexBuffer;
 
-			void startRender();
+	        void startRender();
 
 			bool isRendering = false;
 
@@ -43,6 +44,8 @@ namespace ge
 
             void registerTexture(ge::Texture*, unsigned int);
 
+			void registerCubeMap(ge::CubeMap*, unsigned int);
+
             ge::Uniform* getUniform(std::string);
 
             ge::VertexBuffer *getVertexBuffer(std::string);
@@ -51,6 +54,8 @@ namespace ge
             unsigned int _vao;
 
             std::map<unsigned int, ge::GL::Texture*> _textures;
+			std::map<unsigned int, ge::GL::CubeMap*> _cMaps;
+
             std::map<std::string,ge::GL::VertexBuffer*> _vertexBuffers;
             std::map<std::string,ge::GL::Uniform*> _uniforms;
 

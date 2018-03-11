@@ -12,6 +12,8 @@ struct SceneWiget
 	void render();
 	void update();
 
+	void saveScene();
+
 	ge_START_CYCLE_HANDLER(SceneWiget)
 		ge_GENERATE_TRAMPOLINE(update, UPDATE)
 		ge_GENERATE_TRAMPOLINE(render, 9)
@@ -19,6 +21,7 @@ struct SceneWiget
 
 private:
 	nk_context *ctx;
+
 
 	std::string scenePath;
 	int scenePathState;

@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include "graphics/empty_types/Scene.h"
 #include "graphics/meshes/TriangleMesh.h"
+#include "engine/defaults/SkyBox.h"
 
 
 namespace ge
@@ -40,10 +41,14 @@ namespace ge
 		//TODO: First get Textures working and then get the others going.
 
 		std::unordered_map<std::string, std::shared_ptr<ge::Texture>>		textures;
+		std::unordered_map<std::string, std::shared_ptr<ge::CubeMap>>		cubemaps;
+
 		std::unordered_map<std::string, std::shared_ptr<ge::Empty::MeshData>>	meshes;
 		std::unordered_map<std::string, std::shared_ptr<ge::ShaderGroup>>	shaders;
 
-		std::forward_list<void*>											SuperSketchyEntityHandler;
+		std::forward_list<void*>											SuperSketchyEntityHandler; //Should fix this I think I might of actually...
+
+		
 
 		//TODO: create light class/struct 
 

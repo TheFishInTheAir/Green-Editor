@@ -11,6 +11,7 @@
 #define NK_INCLUDE_DEFAULT_FONT
 #include "ui/file_loader/fileloader.h"
 #include "ui/widgets/scene_widget.h"
+#include "ui/widgets/staticobject_widget.h"
 
 
 #define NK_IMPLEMENTATION
@@ -21,7 +22,6 @@
 #include "nuklear_glfw_gl3.h"
 #include "input/MouseHandler.h"
 #include "graphics/types/lights/LightDirectional.h"
-
 
 
 using namespace ge;
@@ -102,6 +102,12 @@ void ui::render()
 
 		if (nk_button_label(ctx, "Scene"))
 			new SceneWiget(ctx);
+
+		nk_layout_row_static(ctx, 30, 200, 1);
+
+		if (nk_button_label(ctx, "Static Objects"))
+			new StaticObjectWidget(ctx);
+
 
 		nk_layout_row_dynamic(ctx, 30, 2);
 		if (nk_option_label(ctx, "easy", op == EASY)) op = EASY;

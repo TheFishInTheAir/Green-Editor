@@ -10,6 +10,7 @@
 #include "graphics/types/ShaderGroup.h"
 #include "graphics/types/IndexBuffer.h"
 #include "graphics/empty_types/MeshData.h"
+#include "graphics/types/CubeMap.h"
 
 namespace ge
 {
@@ -32,6 +33,7 @@ namespace ge
         virtual void registerUniform(std::string) = 0;
         virtual void registerVertexBuffer(std::string, ge::VertexBuffer*) = 0;
         virtual void registerTexture(ge::Texture*, unsigned int) = 0;
+		virtual void registerCubeMap(ge::CubeMap*, unsigned int)  = 0;
 
         virtual ge::Uniform* getUniform(std::string) = 0;
         virtual ge::VertexBuffer* getVertexBuffer(std::string) = 0;
