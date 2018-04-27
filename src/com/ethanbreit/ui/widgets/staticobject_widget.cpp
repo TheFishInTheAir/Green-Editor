@@ -162,28 +162,22 @@ void StaticObjectWidget::update()
 			if (i == selected)
 			{
 				if (box != nullptr) {
-					glm::vec3 pos(obj->model.matrix[3]);
+					//glm::vec3 pos(obj->model.getMat()[3]);
 					//box->model = glm::translate(pos);
 					{
-						glm::vec3 scale;
-						glm::quat rotation;
-						glm::vec3 translation;
-						glm::vec3 skew;
-						glm::vec4 perspective;
-						glm::decompose(obj->model.matrix, scale, rotation, translation, skew, perspective);
-
+						
 						float realScale = 0.0f;
 
-						if (scale.x <= scale.y && scale.x <= scale.z)
-							realScale = scale.x;
+						if (obj->model.scale.x <= obj->model.scale.y && obj->model.scale.x <= obj->model.scale.z)
+							realScale = obj->model.scale.x;
 
-						if (scale.y <= scale.x && scale.y <= scale.z)
-							realScale = scale.y;
+						if (obj->model.scale.y <= obj->model.scale.x && obj->model.scale.y <= obj->model.scale.z)
+							realScale = obj->model.scale.y;
 
-						if (scale.z <= scale.x && scale.z <= scale.y)
-							realScale = scale.z;
+						if (obj->model.scale.z <= obj->model.scale.x && obj->model.scale.z <= obj->model.scale.y)
+							realScale = obj->model.scale.z;
 
-						box->model = glm::translate(translation);
+						box->model = glm::translate(obj->model.pos);
 
 						box->model = glm::scale(box->model, {realScale*2,realScale*2,realScale*2 });
 
@@ -239,11 +233,10 @@ void StaticObjectWidget::postRender()
 					f = true;
 					ge::Camera* camera = ge::GlobalMemory::get(DBL_STRINGIFY(CURRENT_CAMERA)).getRawData<ge::Camera>();
 					
-					glm::vec3 pos(obj->model.matrix[3]);
-
+					
 
 					box = new ge::Debug::DebugColouredBox(camera);
-					box->model = glm::translate(pos);
+					box->model = glm::translate(obj->model.pos);
 					box->model = glm::scale(box->model, { 0.02,0.02,0.02 });
 					box->colour = { 1,1,1 };
 					
@@ -314,7 +307,7 @@ void StaticObjectWidget::drawTransformData()
 			{
 				static ge::Camera* currentCamera = ge::GlobalMemory::get(DBL_STRINGIFY(CURRENT_CAMERA)).getRawData<ge::Camera>();
 
-
+				/*
 				if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::I)) {
 					int sizeOfVertBuf = obj->mesh->getVertexBuffer("vertex")->data->size;
 					int sizePerVert = obj->mesh->getVertexBuffer("vertex")->data->sizePerAttrib;
@@ -323,11 +316,11 @@ void StaticObjectWidget::drawTransformData()
 					{
 						const float* data = (float*)obj->mesh->getVertexBuffer("vertex")->data->data;
 
-						glm::mat4 finMat = (currentCamera->vp); //* obj->model.matrix);
+						glm::mat4 finMat = (currentCamera->vp); //* obj->model.getMat());
 						glm::vec4 tempVec = glm::vec4(data[i * 3], data[i * 3 + 1], data[i * 3 + 2], 1);
-						glm::vec4 modVec = obj->model.matrix * tempVec;
+						glm::vec4 modVec = obj->model.getMat() * tempVec;
 						glm::vec4 finVec = finMat * modVec;
-						//ge::ConsoleIO::print(std::string("pos:   ") + std::to_string((obj->model.matrix[3] * glm::vec4((((glm::vec3*)data)[i]), 1)).x) + ", " + std::to_string((obj->model.matrix[3] * glm::vec4((((glm::vec3*)data)[i]), 1)).y) + ", " + std::to_string((obj->model.matrix[3] * glm::vec4((((glm::vec3*)data)[i]), 1)).z) + ", \n");
+						//ge::ConsoleIO::print(std::string("pos:   ") + std::to_string((obj->model.getMat()[3] * glm::vec4((((glm::vec3*)data)[i]), 1)).x) + ", " + std::to_string((obj->model.getMat()[3] * glm::vec4((((glm::vec3*)data)[i]), 1)).y) + ", " + std::to_string((obj->model.getMat()[3] * glm::vec4((((glm::vec3*)data)[i]), 1)).z) + ", \n");
 						if (finVec.w < 0)
 							return;
 
@@ -340,16 +333,16 @@ void StaticObjectWidget::drawTransformData()
 							nk_end(ctx);
 						}
 					}
-				}
-
+				}*/
+				/*
 				glm::vec3 scale;
 				glm::quat rotation;
 				glm::vec3 translation;
 				glm::vec3 skew;
 				glm::vec4 perspective;
-				glm::decompose(obj->model.matrix, scale, rotation, translation, skew, perspective);
+				glm::decompose(obj->model.getMat(), scale, rotation, translation, skew, perspective);
 
-				glm::mat4 finMat = (currentCamera->vp); //* obj->model.matrix);
+				glm::mat4 finMat = (currentCamera->vp); //* obj->model.getMat());
 				glm::vec4 finVec = finMat * box->model[3];
 
 				if (finVec.w < 0)
@@ -361,10 +354,10 @@ void StaticObjectWidget::drawTransformData()
 					nk_layout_row_dynamic(ctx, 20, 1);
 					nk_label(ctx, (std::string("pos:   ") + std::to_string(translation.x) + ", " + std::to_string(translation.y) + ", " + std::to_string(translation.z) + ", ").c_str(), NK_TEXT_ALIGN_LEFT);
 					nk_layout_row_dynamic(ctx, 20, 1);
-					nk_label(ctx, (std::string("scale: ") + std::to_string(scale.x) + ", " + std::to_string(scale.y) + ", " + std::to_string(scale.z) + ", ").c_str(), NK_TEXT_ALIGN_LEFT);
+					nk_label(ctx, (std::string("scale: ") + std::to_string(obj->model.scale.x) + ", " + std::to_string(obj->model.scale.y) + ", " + std::to_string(scale.z) + ", ").c_str(), NK_TEXT_ALIGN_LEFT);
 
 					nk_end(ctx);
-				}
+				}*/
 			}
 			i++;
 		}
@@ -375,104 +368,92 @@ void StaticObjectWidget::drawTransformData()
 void StaticObjectWidget::move(ge::StaticObject* obj)
 {
 
-	glm::vec3 scale;
-	glm::quat rotation;
-	glm::vec3 translation;
-	glm::vec3 skew;
-	glm::vec4 perspective;
-	glm::decompose(obj->model.matrix, scale, rotation, translation, skew, perspective);
-
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP8))
 	{
 		//POSZ
-		obj->model.matrix = glm::translate(obj->model.matrix, glm::vec3(0.0f, 0.0f, 0.1f) * glm::vec3(((float)moveScale) / 100.0f) / scale);
+		obj->model.pos += glm::vec3(0.0f, 0.0f, 0.1f) * glm::vec3(((float)moveScale) / 100.0f) / obj->model.scale;
 	}
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP2))
 	{
 		//NEGZ
-		obj->model.matrix = glm::translate(obj->model.matrix, glm::vec3(0.0f, 0.0f, -0.1f) * glm::vec3(((float)moveScale) / 100.0f) / scale);
+		obj->model.pos += glm::vec3(0.0f, 0.0f, -0.1f) * glm::vec3(((float)moveScale) / 100.0f) / obj->model.scale;
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP4))
 	{
 		//POSX
-		obj->model.matrix = glm::translate(obj->model.matrix, glm::vec3(0.1f, 0.0f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / scale);
+		obj->model.pos += glm::vec3(0.1f, 0.0f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / obj->model.scale;
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP6))
 	{
 		//NEGX
-		obj->model.matrix = glm::translate(obj->model.matrix, glm::vec3(-0.1f, 0.0f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / scale);
+		obj->model.pos += glm::vec3(-0.1f, 0.0f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / obj->model.scale;
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP7))
 	{
 		//POSY
-		obj->model.matrix = glm::translate(obj->model.matrix, glm::vec3(0.0f, 0.1f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / scale);
+		obj->model.pos += glm::vec3(0.0f, 0.1f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / obj->model.scale;
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP9))
 	{
 		//NEGY
-		obj->model.matrix = glm::translate(obj->model.matrix, glm::vec3(0.0f, -0.1f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / scale);
+		obj->model.pos += glm::vec3(0.0f, -0.1f, 0.0f) * glm::vec3(((float)moveScale) / 100.0f) / obj->model.scale;
 	}
 }
 
 void StaticObjectWidget::scale(ge::StaticObject* obj)
 {
 
-	glm::vec3 scale;
-	glm::quat rotation;
-	glm::vec3 translation;
-	glm::vec3 skew;
-	glm::vec4 perspective;
-	glm::decompose(obj->model.matrix, scale, rotation, translation, skew, perspective);
+
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP8))
 	{
 		//POSZ
-		obj->model.matrix = glm::scale(obj->model.matrix, { 1, 1, (scale.z - (0.0025 * (float)moveScale / 100.0f)) / scale.z });
+		obj->model.scale +=  glm::vec3( 1, 1, (obj->model.scale.z - (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.z );
 	}
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP2))
 	{
 		//NEGZ
-		obj->model.matrix = glm::scale(obj->model.matrix, { 1, 1, (scale.z + (0.0025 * (float)moveScale / 100.0f)) / scale.z });
+		obj->model.scale += glm::vec3(1, 1, (obj->model.scale.z + (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.z );
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP4))
 	{
 		//POSX
-		obj->model.matrix = glm::scale(obj->model.matrix, { (scale.x - (0.0025 * (float)moveScale / 100.0f)) / scale.x, 1, 1 });
+		obj->model.scale += glm::vec3((obj->model.scale.x - (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.x, 1, 1 );
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP6))
 	{
 		//NEGX
-		obj->model.matrix = glm::scale(obj->model.matrix, { (scale.x + (0.0025 * (float)moveScale / 100.0f)) / scale.x, 1, 1 });
+		obj->model.scale += glm::vec3((obj->model.scale.x + (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.x, 1, 1 );
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP7))
 	{
 		//POSY
-		obj->model.matrix = glm::scale(obj->model.matrix, { 1, (scale.y - (0.0025 * (float)moveScale / 100.0f)) / scale.y, 1 });
+		obj->model.scale += glm::vec3(1, (obj->model.scale.y - (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.y, 1 );
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NP9))
 	{
 		//NEGY
-		obj->model.matrix = glm::scale(obj->model.matrix, { 1, (scale.y + (0.0025 * (float)moveScale / 100.0f)) / scale.y, 1 });
+		obj->model.scale += glm::vec3(1, (obj->model.scale.y + (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.y, 1 );
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NPADD))
 	{
 		//POS ALL
-		obj->model.matrix = glm::scale(obj->model.matrix, { (scale.x + (0.0025 * (float)moveScale / 100.0f)) / scale.x, (scale.y + (0.0025 * (float)moveScale / 100.0f)) / scale.y, (scale.z + (0.0025 * (float)moveScale / 100.0f)) / scale.z });
+		obj->model.scale += glm::vec3((obj->model.scale.x + (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.x, (obj->model.scale.y + (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.y, (obj->model.scale.z + (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.z);
 	}
 
 	if (ge::KeyboardHandler::keyDown(ge::KeyboardKey::NPENTER))
 	{
 		//NEG ALL
-		obj->model.matrix = glm::scale(obj->model.matrix, { (scale.x - (0.0025 * (float)moveScale / 100.0f)) / scale.x, (scale.y - (0.0025 * (float)moveScale / 100.0f)) / scale.y, (scale.z - (0.0025 * (float)moveScale / 100.0f)) / scale.z });
+		obj->model.scale += glm::vec3((obj->model.scale.x - (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.x, (obj->model.scale.y - (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.y, (obj->model.scale.z - (0.0025 * (float)moveScale / 100.0f)) / obj->model.scale.z);
 	}
 
 }

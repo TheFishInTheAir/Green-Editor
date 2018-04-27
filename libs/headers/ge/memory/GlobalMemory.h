@@ -23,16 +23,13 @@ namespace ge
             template <typename Type> Type* getRawData()
             {
 
-                //TODO: super unsafe, come up with a better way to implement this.
-                Type* t = reinterpret_cast<Type*> (data);
+				Type* t = reinterpret_cast<Type*> (data);
                 return t;
             }
 
             template <typename Type> Type getData()
             {
-
-                //TODO: super unsafe, come up with a better way to implement this.
-                Type t = *(reinterpret_cast<Type*> (data));
+				Type t = *(reinterpret_cast<Type*> (data));
                 return t;
             }
 

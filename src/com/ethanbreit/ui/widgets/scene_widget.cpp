@@ -83,6 +83,7 @@ void SceneWiget::saveScene()
 		}
 		outScene["preloaded_resources"]["meshes"] = meshPaths;
 	}
+
 	{
 		std::vector<nlohmann::json> cubemaps;
 		for (auto cm : scene->cubemaps)

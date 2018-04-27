@@ -31,7 +31,5 @@ namespace ge
 
         } type;
 
-        //TODO: function to check if model has alpha
-
     }
 }

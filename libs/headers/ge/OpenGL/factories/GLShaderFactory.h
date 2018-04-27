@@ -15,8 +15,9 @@ namespace ge
         struct ShaderFactory : public ge::ShaderFactory
         {
 
-            ge::Error genShader(std::string,ShaderType::type, ge::Shader**);
-            ge::Error genShaderGroup(std::vector<ge::Shader*>, ge::ShaderGroup**);
+            ge::Error genShader(std::string,ShaderType::type, std::shared_ptr<ge::Shader>*);
+            ge::Error genShaderGroup(std::vector<std::shared_ptr<ge::Shader>>, ge::ShaderGroup**);
+			void	  destroyShader(ge::Shader*);
 
         };
     }

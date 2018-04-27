@@ -7,7 +7,6 @@ namespace ge
 {
 	namespace ShaderPreprocessor
 	{
-		//TODO: better name for both class and function
 		std::string process(std::string);
 	}
 }

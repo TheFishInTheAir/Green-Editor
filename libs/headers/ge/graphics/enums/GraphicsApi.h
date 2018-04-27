@@ -7,7 +7,7 @@ namespace ge
 {
     namespace GraphicsApi
     {
-        //TODO: Refactor to something better or have a namespace
+
         typedef enum {
             OpenGL,
             Vulkan,

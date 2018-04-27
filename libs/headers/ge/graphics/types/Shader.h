@@ -4,9 +4,10 @@
 
 #pragma once
 
-
 namespace ge
 {
-    struct Shader
-    {};
+	struct Shader
+	{
+		~Shader();
+	};
 }

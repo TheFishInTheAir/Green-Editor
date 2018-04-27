@@ -13,10 +13,6 @@ namespace ge
 
         struct Shader : ge::Shader
         {
-            ~Shader()
-            {
-                glDeleteShader(id);
-            }
 
             unsigned int id;
         };

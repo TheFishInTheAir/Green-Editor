@@ -19,7 +19,7 @@ namespace ge
 {
 
 
-	struct Scene //TODO: think before writing
+	struct Scene
     {
 
 		void loadScene(Empty::Scene);
@@ -38,19 +38,19 @@ namespace ge
 		 * 
     	 */
 
-		//TODO: First get Textures working and then get the others going.
-
 		std::unordered_map<std::string, std::shared_ptr<ge::Texture>>		textures;
 		std::unordered_map<std::string, std::shared_ptr<ge::CubeMap>>		cubemaps;
 
 		std::unordered_map<std::string, std::shared_ptr<ge::Empty::MeshData>>	meshes;
-		std::unordered_map<std::string, std::shared_ptr<ge::ShaderGroup>>	shaders;
+		std::unordered_map<std::string, std::shared_ptr<ge::ShaderGroup>>		shaderGroups;
+		std::unordered_map<std::string, std::shared_ptr<ge::Shader>>			shaders;
+
 
 		std::forward_list<void*>											SuperSketchyEntityHandler; //Should fix this I think I might of actually...
 
 		
 
-		//TODO: create light class/struct 
+		//TODO: create light class/struct @UNFINISHED
 
 		//std::vector<Light> lights;
 

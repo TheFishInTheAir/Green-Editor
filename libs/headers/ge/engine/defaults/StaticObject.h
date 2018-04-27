@@ -55,7 +55,7 @@ namespace ge
 
 		Camera* currentCamera;
 		
-		void initRenderer();
+		void initRenderer(Empty::StaticObject sobj);
 		void initTextures(Empty::StaticObject*);
 
 		static GraphicsCore* _gCore;
@@ -65,6 +65,14 @@ namespace ge
 
 		Uniform* u_albedo;
 		Uniform* u_specular;
+
+		Uniform* u_time;
+		float t = 0;
+
+		bool isDefault = true;
+
+		//Uniform* u_specular;
+
 
 		Uniform* u_testlight_col;
 		Uniform* u_testlight_dir;

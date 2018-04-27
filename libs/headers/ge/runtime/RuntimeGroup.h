@@ -11,7 +11,7 @@
 #define ge_RUNTIME_GROUP_INSERT_THIS insert(this, __cycleHandlerUUID())
 #define ge_RUNTIME_GROUP_INSERT_STACK(r) insert(r, r.__cycleHandlerUUID())
 #define ge_RUNTIME_GROUP_INSERT_HEAP(r) insert(r, r->__cycleHandlerUUID())
-//TODO: Add Other Definitions
+
 #define ge_RUNTIME_GROUP_REMOVE_THIS remove(this)
 #define ge_RUNTIME_GROUP_REMOVE_HEAP(r) remove(r)
 

@@ -15,7 +15,7 @@ namespace ge
 
 		virtual LightType::type getLightType() = 0;
 
-		//TODO: add more parameters.
+		//TODO: add more parameters. @UNFINISHED
 
 	};
 }

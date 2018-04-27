@@ -83,11 +83,22 @@ namespace ge
 			NP8 = GLFW_KEY_KP_8,
 			NP9 = GLFW_KEY_KP_9,
 
-			NPADD = GLFW_KEY_KP_ADD,
-			NPMIN = GLFW_KEY_KP_SUBTRACT,
+
+			NPADD	= GLFW_KEY_KP_ADD,
+			NPMIN	= GLFW_KEY_KP_SUBTRACT,
 			NPENTER = GLFW_KEY_KP_ENTER,
 			NPMULT  = GLFW_KEY_KP_MULTIPLY,
 			NPDIV   = GLFW_KEY_KP_DIVIDE,
+			NPDEL	= GLFW_KEY_KP_DECIMAL,
+
+			DEL		= GLFW_KEY_DELETE,
+			INS	= GLFW_KEY_INSERT,
+			HOME	= GLFW_KEY_HOME,
+			END		= GLFW_KEY_END,
+			PGUP	= GLFW_KEY_PAGE_UP,
+			PGDN	= GLFW_KEY_PAGE_UP,
+
+
 
 			F1 = GLFW_KEY_F1,
 			F2 = GLFW_KEY_F2,
@@ -120,7 +131,7 @@ namespace ge
             TILDA = GLFW_KEY_GRAVE_ACCENT,
             BACKSPACE = GLFW_KEY_BACKSPACE,
             RETURN = GLFW_KEY_ENTER,
-            //TODO: add in more keys
+            //TODO: add in more keys @UNFINISHED
 
 
         } type;

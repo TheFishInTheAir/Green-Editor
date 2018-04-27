@@ -16,7 +16,6 @@
 #define ge_START_CYCLE_HANDLER(c)   static uint64_t __cycleHandlerUUID() {static uint64_t __uuid = 0;if(__uuid==0){__uuid = ge::GlobalRuntime::genCycleHandlerUUID();}return __uuid;} static void __cycle(void *vRef, uint32_t runId){ c* ref = reinterpret_cast<c*>(vRef); switch(runId) {
 #define ge_GENERATE_TRAMPOLINE(f,i) case i: ref->f(); return;
 #define ge_END_CYCLE_HANDLER        default:return;}}
-//TODO: Add group selection
 
 namespace ge
 {

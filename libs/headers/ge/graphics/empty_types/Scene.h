@@ -15,10 +15,9 @@ namespace ge
 	namespace Empty
 	{
 
-		struct Scene //TODO: think before writing
+		struct Scene 
 		{
 
-			//TODO: First get Textures working and then get the others going.
 
 			std::vector<std::string>								keptRes;
 
@@ -34,12 +33,7 @@ namespace ge
 
 
 			std::string	skybox = "";
-
-			//std::map<std::string, std::shared_ptr<ge::Empty::MeshData>> meshs;
-			//std::map<std::string, std::shared_ptr<ge::Shader>> shaders;
-			//std::map<std::string, std::shared_ptr<ge::ShaderGroup>> shaderGroups;
-
-			//TODO: create light class/struct 
+			//TODO: create light class/struct  @UNFINISHED
 
 			//std::vector<Light> lights;
 
