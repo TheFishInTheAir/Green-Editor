@@ -1,0 +1,23 @@
+{
+    "version":
+    {
+        "major":0,
+        "minor":1
+    },
+
+    "name":"OnyxTile",
+
+    "shader_group":"engine/defaults/forward/lit/phong.gesm",
+
+    "values":
+    [
+        {
+            "disp_name":"Albedo",
+            "value":"demo/textures/ONYX_COL.jpg"
+        },
+        {
+            "disp_name":"Specular",
+            "value":"demo/textures/ONYX_REFL.jpg"
+        }
+    ]
+}

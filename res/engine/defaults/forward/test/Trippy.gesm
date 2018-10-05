@@ -1,0 +1,33 @@
+{
+	"merge":"engine/defaults/forward/test/Trippy.glsl",
+
+    "merge_info":
+    [
+        "VERTEX",
+        "FRAGMENT"
+    ],
+
+    "uniforms":
+    [
+        {
+            "name":"MVP_VP",
+            "type":"mat4"
+        },
+        {
+            "name":"MVP_M",
+            "type":"mat4"
+        },
+        {
+            "name":"CAMERA_POS",
+            "type":"vec3"
+        },
+        {
+            "name":"SKYBOX",
+            "type":"int"
+        },
+        {
+            "name":"GE_TIME",
+            "type":"float"
+        }
+    ]
+}

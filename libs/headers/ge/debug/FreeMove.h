@@ -5,7 +5,7 @@
 #pragma once
 
 #include <glm/glm.hpp>
-#include <graphics/Camera.h>
+#include <ge/graphics/Camera.h>
 namespace ge
 {
 

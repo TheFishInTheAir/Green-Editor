@@ -67,6 +67,8 @@ struct nk_glfw_device {
     GLint uniform_tex;
     GLint uniform_proj;
     GLuint font_tex;
+
+	bool _negate_tex_coord_y;
 };
 
 struct nk_glfw_vertex {
@@ -121,8 +123,9 @@ nk_glfw3_device_create(void)
         "in vec2 Frag_UV;\n"
         "in vec4 Frag_Color;\n"
         "out vec4 Out_Color;\n"
+		"uniform bool _get_fucked;\n"
         "void main(){\n"
-        "   Out_Color = Frag_Color * texture(Texture, Frag_UV.st);\n"
+		"   Out_Color = Frag_Color * texture(Texture, vec2(Frag_UV.s, _get_fucked ? -Frag_UV.t : Frag_UV.t));\n"
         "}\n";
 
     struct nk_glfw_device *dev = &glfw.ogl;
@@ -149,7 +152,7 @@ nk_glfw3_device_create(void)
     dev->attrib_pos = glGetAttribLocation(dev->prog, "Position");
     dev->attrib_uv = glGetAttribLocation(dev->prog, "TexCoord");
     dev->attrib_col = glGetAttribLocation(dev->prog, "Color");
-
+	dev->_negate_tex_coord_y = false;
     {
         /* buffer setup */
         GLsizei vs = sizeof(struct nk_glfw_vertex);
@@ -291,6 +294,7 @@ nk_glfw3_render(enum nk_anti_aliasing AA, int max_vertex_buffer, int max_element
                 (GLint)((glfw.height - (GLint)(cmd->clip_rect.y + cmd->clip_rect.h)) * glfw.fb_scale.y),
                 (GLint)(cmd->clip_rect.w * glfw.fb_scale.x),
                 (GLint)(cmd->clip_rect.h * glfw.fb_scale.y));
+			
             glDrawElements(GL_TRIANGLES, (GLsizei)cmd->elem_count, GL_UNSIGNED_SHORT, offset);
             offset += cmd->elem_count;
         }

@@ -4,10 +4,10 @@
 
 #pragma once
 
-#include <error/Error.h>
-#include <graphics/types/Image.h>
+#include <ge/error/Error.h>
+#include <ge/graphics/types/Image.h>
 #include <memory>
-#include <game/scene/Scene.h>
+#include <ge/game/scene/Scene.h>
 
 namespace ge
 {

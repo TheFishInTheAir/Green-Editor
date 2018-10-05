@@ -1,0 +1,308 @@
+{
+  "entities": [
+    {
+      "components": [
+        {
+          "type": "DirectionalLightComponent",
+          "vars": [
+            {
+              "name": "Colour",
+              "value": {
+                "x": 0.24137932062149048,
+                "y": 0.236131951212883,
+                "z": 0.236131951212883
+              }
+            },
+            {
+              "name": "Ambient",
+              "value": 0.20000000298023224
+            },
+            {
+              "name": "Debug Box",
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 0.0,
+                "y": 1.500000238418579,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.760405957698822,
+                "x": -0.649448037147522,
+                "y": -0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "name": "sun_light"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": -3.2999989986419678,
+                "y": 3.9999985694885254,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 1.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "SpotLightComponent",
+          "vars": [
+            {
+              "name": "Colour",
+              "value": {
+                "x": 0.9231832027435303,
+                "y": 0.931034505367279,
+                "z": 0.7033358216285706
+              }
+            },
+            {
+              "name": "Angle",
+              "value": 2.700004816055298
+            },
+            {
+              "name": "Outer Angle",
+              "value": 28.30002784729004
+            },
+            {
+              "name": "Debug Box",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "name": "light_1"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 2.499999761581421,
+                "y": 1.9000002145767212,
+                "z": 6.199995517730713
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.8594062328338623,
+                "x": 0.5112934112548828,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "SpotLightComponent",
+          "vars": [
+            {
+              "name": "Colour",
+              "value": {
+                "x": 0.8965517282485962,
+                "y": 0.5457271337509155,
+                "z": 0.5457271337509155
+              }
+            },
+            {
+              "name": "Angle",
+              "value": 15.0
+            },
+            {
+              "name": "Outer Angle",
+              "value": 10.0
+            },
+            {
+              "name": "Debug Box",
+              "value": true
+            }
+          ]
+        }
+      ],
+      "name": "light_2"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": true
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 5.0,
+                "y": 1.0,
+                "z": 5.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 1.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "HLMeshComponent",
+          "vars": [
+            {
+              "name": "Sketch Material",
+              "value": "OnyxTile"
+            },
+            {
+              "name": "Sketch Mesh",
+              "value": "demo/meshes/plane.obj"
+            }
+          ]
+        }
+      ],
+      "name": "test_ent_floor"
+    }
+  ],
+  "preloaded_resources": {
+    "cubemaps": [
+      {
+        "tag": "forest",
+        "xneg": "test_skybox/forest/negx.jpg",
+        "xpos": "test_skybox/forest/posx.jpg",
+        "yneg": "test_skybox/forest/negy.jpg",
+        "ypos": "test_skybox/forest/posy.jpg",
+        "zneg": "test_skybox/forest/negz.jpg",
+        "zpos": "test_skybox/forest/posz.jpg"
+      }
+    ],
+    "materials": [
+      "demo/mats/tile.gmat",
+      "demo/mats/vsk.gmat",
+      "demo/mats/ice.gmat"
+    ],
+    "audio_clips": [
+      "ge_test.ogg",
+      "ge_test_2.ogg"
+    ],
+    "meshes": [
+      "demo/meshes/marker.obj",
+      "demo/meshes/plane.obj",
+      "demo/meshes/subdiv_plane.obj",
+      "demo/meshes/room.obj",
+      "demo/meshes/VSK_S.obj",
+      "demo/meshes/cube.obj"
+    ],
+    "shaders": [
+      "engine/defaults/forward/skybox/skybox.gesm",
+      "engine/defaults/forward/water/simple.gesm",
+      "engine/defaults/forward/lit/phong.gesm",
+      "engine/defaults/forward/test/Ice.gesm"
+
+    ],
+    "textures": [
+      "demo/textures/ONYX_REFL.jpg",
+      "demo/textures/ONYX_COL.jpg",
+      "demo/textures/VSK_COL.png",
+      "demo/textures/VSK_ROUGH.png"
+    ]
+  },
+  "skybox": "forest",
+  "version": {
+    "major": 1,
+    "minor": 2
+  }
+}

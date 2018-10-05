@@ -1,0 +1,315 @@
+{
+  "entities": [
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": -0.10000000149011612,
+                "x": 0.10000000149011612,
+                "y": 0.10000000149011612,
+                "z": -0.20000000298023224
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "LightComponent",
+          "vars": [
+            {
+              "name": "Colour",
+              "value": {
+                "x": 0.931034505367279,
+                "y": 0.47563719749450684,
+                "z": 0.47563719749450684
+              }
+            },
+            {
+              "name": "Angle",
+              "value": 0.0
+            },
+            {
+              "name": "Light Type",
+              "value": 1
+            }
+          ]
+        }
+      ],
+      "name": "light"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 0.0,
+                "y": -0.6000000238418579,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "HLMeshComponent",
+          "vars": [
+            {
+              "name": "Sketch Material",
+              "value": "OnyxTile"
+            },
+            {
+              "name": "Sketch Mesh",
+              "value": "demo/meshes/plane.obj"
+            }
+          ]
+        }
+      ],
+      "name": "plane"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "HLMeshComponent",
+          "vars": [
+            {
+              "name": "Sketch Material",
+              "value": "VSK"
+            },
+            {
+              "name": "Sketch Mesh",
+              "value": "demo/meshes/VSK_S.obj"
+            }
+          ]
+        }
+      ],
+      "name": "skull"
+    },
+    {
+      "components": [
+        {
+          "type": "MeshRendererComponent",
+          "vars": [
+            {
+              "name": "Cull Backface",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "name": "skybox"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": -0.6806879043579102,
+                "y": 0.7601751089096069,
+                "z": 2.0785911083221436
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": -0.9759601354598999,
+                "x": 0.1903383880853653,
+                "y": 0.10421165823936462,
+                "z": 0.020324068143963814
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "CameraComponent",
+          "vars": [
+            {
+              "name": "FOV",
+              "value": 0.7853981852531433
+            },
+            {
+              "name": "Near Cull Plane",
+              "value": 0.009999999776482582
+            },
+            {
+              "name": "Far Cull Plane",
+              "value": 100.0
+            }
+          ]
+        },
+        {
+          "type": "FreeCamControllerComponent",
+          "vars": [
+            {
+              "name": "Look Speed",
+              "value": 15.0
+            },
+            {
+              "name": "Move Speed",
+              "value": 35.0
+            }
+          ]
+        }
+      ],
+      "name": "main_cam"
+    },
+    {
+      "components": [
+        {
+          "type": "EngineControllerComponent",
+          "vars": []
+        }
+      ],
+      "name": "engine_core"
+    }
+  ],
+  "preloaded_resources": {
+    "cubemaps": [
+      {
+        "tag": "forest",
+        "xneg": "test_skybox/forest/negx.jpg",
+        "xpos": "test_skybox/forest/posx.jpg",
+        "yneg": "test_skybox/forest/negy.jpg",
+        "ypos": "test_skybox/forest/posy.jpg",
+        "zneg": "test_skybox/forest/negz.jpg",
+        "zpos": "test_skybox/forest/posz.jpg"
+      }
+    ],
+    "materials": [
+      "OnyxTile",
+      "VSK"
+    ],
+    "meshes": [
+      "demo/meshes/plane.obj",
+      "demo/meshes/subdiv_plane.obj",
+      "demo/meshes/VSK_S.obj",
+      "demo/meshes/cube.obj"
+    ],
+    "shaders": [
+      "engine/defaults/forward/skybox/skybox.gesm",
+      "engine/defaults/forward/water/simple.gesm",
+      "engine/defaults/forward/lit/phong.gesm"
+    ],
+    "textures": [
+      "demo/textures/ONYX_REFL.jpg",
+      "demo/textures/ONYX_COL.jpg",
+      "demo/textures/VSK_COL.png",
+      "demo/textures/VSK_ROUGH.png"
+    ]
+  },
+  "skybox": "forest",
+  "version": {
+    "major": 1,
+    "minor": 2
+  }
+}

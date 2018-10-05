@@ -4,11 +4,11 @@
 
 #pragma once
 #include <forward_list>
-#include "graphics/types/Texture.h"
-#include "graphics/empty_types/MeshData.h"
-#include "graphics/types/Shader.h"
+#include <ge/graphics/types/Texture.h>
+#include <ge/graphics/empty_types/MeshData.h>
+#include <ge/graphics/types/Shader.h>
 #include <memory>
-#include "graphics/types/Image.h"
+#include <ge/graphics/types/Image.h>
 
 namespace ge
 {

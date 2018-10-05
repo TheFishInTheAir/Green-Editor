@@ -1,0 +1,13 @@
+{
+    "version":
+    {
+        "major":0,
+        "minor":1
+    },
+
+    "name":"Ice",
+
+    "shader_group":"engine/defaults/forward/test/Ice.gesm",
+
+    "values":[]
+}

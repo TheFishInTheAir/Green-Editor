@@ -25,6 +25,8 @@ namespace ge
             RGBA    = 0x3003,
             ABGR    = 0x3004,
             BGRA    = 0x3005,
+
+            //Depth   = 0x4000, //pretty much black and white (red)
             /*CMYK,
             ACMYK,
             CMYKA,*/

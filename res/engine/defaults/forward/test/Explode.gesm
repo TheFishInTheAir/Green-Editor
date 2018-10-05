@@ -1,0 +1,40 @@
+{
+	"merge":"engine/defaults/forward/test/Explode.glsl",
+
+    "merge_info":
+    [
+        "VERTEX",
+        "GEOMETRY",
+        "FRAGMENT"
+    ],
+
+    "uniforms":
+    [
+        {
+            "name":"MVP_V",
+            "type":"mat4"
+        },
+
+        {
+            "name":"MVP_P",
+            "type":"mat4"
+        },
+        {
+            "name":"MVP_M",
+            "type":"mat4"
+        },
+        {
+            "name":"CAMERA_POS",
+            "type":"vec3"
+        },
+        {
+            "name":"SKYBOX",
+            "type":"int"
+        },
+        {
+            "name":"GE_TIME",
+            "type":"float"
+
+        }
+    ]
+}

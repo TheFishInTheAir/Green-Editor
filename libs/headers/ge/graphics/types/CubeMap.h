@@ -4,14 +4,23 @@
 
 #pragma once
 
-#include <graphics/enums/TextureFilterType.h>
-#include <graphics/enums/ColourModelType.h>
-#include <error/Error.h>
+#include <ge/graphics/enums/TextureFilterType.h>
+#include <ge/graphics/enums/ColourModelType.h>
+#include <ge/error/Error.h>
 
 namespace ge
 {
 	struct CubeMap
 	{
+		std::string xp_url;
+		std::string xn_url;
+		
+		std::string yp_url;
+		std::string yn_url;
+
+		std::string zp_url;
+		std::string zn_url;
+		
 		int getDimension() const;
 
 		TextureFilterType::type getFiltering();

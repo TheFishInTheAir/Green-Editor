@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include <graphics/enums/BufferMemoryType.h>
+#include <ge/graphics/enums/BufferMemoryType.h>
 #include <cstddef>
-#include "graphics/empty_types/IndexBuffer.h"
+#include <ge/graphics/empty_types/IndexBuffer.h>
 
 namespace ge
 {

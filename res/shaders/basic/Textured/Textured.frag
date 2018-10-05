@@ -30,5 +30,8 @@ void main()
 	vec3 specular = testLight.colour * spec * (1 - texture(SPECULAR_REF, tUV).x);
 
 	//	intermediateColour += vec4(testLight.colour, 0) * spec * 0.5f;
+
 	colour = vec4(diffuse + specular, 1);
+
+	//colour = vec4(tNorm, 1); ///NORMAL TEST
 }

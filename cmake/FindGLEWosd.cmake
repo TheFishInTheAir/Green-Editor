@@ -52,7 +52,7 @@ if (WIN32)
     else()
         set(ARCH x86)
     endif()
-	message("what the glew path should be: $ENV{PROGRAMFILES}/GLEW/lib")
+
     find_library(GLEW_LIBRARY
         NAMES
             glew GLEW glew32s glew32
@@ -61,7 +61,6 @@ if (WIN32)
             "$ENV{GLEW_LOCATION}/lib"
         PATHS
             "$ENV{PROGRAMFILES}/GLEW/lib"
-			"$ENV{PROGRAMFILES}/GLEW/bin"
             "${PROJECT_SOURCE_DIR}/extern/glew/bin"
             "${PROJECT_SOURCE_DIR}/extern/glew/lib"
         PATH_SUFFIXES

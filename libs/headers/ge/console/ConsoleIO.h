@@ -4,14 +4,13 @@
 
 #pragma once
 
-#include <console/enum/MessageType.h>
+#include <ge/console/enum/MessageType.h>
 #include <string>
 
 namespace ge
 {
     namespace ConsoleIO
     {
-
 
         void print(std::string);
         void print(std::string, MessageType::type);

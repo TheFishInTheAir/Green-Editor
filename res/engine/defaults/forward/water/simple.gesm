@@ -1,0 +1,35 @@
+{
+	"merge":"engine/defaults/forward/water/simple.glsl",
+
+    "merge_info":
+    [
+        "VERTEX",
+        "FRAGMENT"
+    ],
+
+    "uniforms":
+    [
+        {
+            "name":"MVP_M",
+            "type":"mat4"
+        },
+
+        {
+            "name":"MVP_VP",
+            "type":"mat4"
+        },
+        {
+            "name":"GE_TIME",
+            "type":"float"
+        },
+        {
+            "name":"CAMERA_POS",
+            "type":"vec3"
+        },
+        {
+            "name":"SKYBOX",
+            "type":"int"
+        }
+
+    ]
+}

@@ -4,19 +4,20 @@
 
 #pragma once
 
-#include <graphics/factories/ShaderFactory.h>
-#include <graphics/types/Window.h>
-#include <graphics/factories/BufferFactory.h>
-#include <graphics/factories/MeshFactory.h>
-#include <graphics/enums/GraphicsApi.h>
+#include <ge/graphics/factories/ShaderFactory.h>
+#include <ge/graphics/types/Window.h>
+#include <ge/graphics/factories/BufferFactory.h>
+#include <ge/graphics/factories/MeshFactory.h>
+#include <ge/graphics/enums/GraphicsApi.h>
 
 ///OpenGL
-#include <OpenGL/types/GLWindow.h>
-#include <OpenGL/factories/GLBufferFactory.h>
-#include <OpenGL/factories/GLShaderFactory.h>
-#include <OpenGL/factories/GLMeshFactory.h>
+#include <ge/graphics/abs/OpenGL/types/GLWindow.h>
+#include <ge/graphics/abs/OpenGL/factories/GLBufferFactory.h>
+#include <ge/graphics/abs/OpenGL/factories/GLShaderFactory.h>
+#include <ge/graphics/abs/OpenGL/factories/GLMeshFactory.h>
 #include <map>
-#include "factories/TextureFactory.h"
+#include <ge/graphics/factories/TextureFactory.h>
+#include <ge/graphics/pipeline/Pipeline.h>
 
 ///Vulkan
 
@@ -25,6 +26,7 @@ namespace ge
 {
     struct GraphicsCore
     {
+		static GraphicsCore* ctx;
 
         GraphicsCore(GraphicsApi::type);
 
@@ -32,11 +34,15 @@ namespace ge
         BufferFactory       *bufferFactory;
         MeshFactory         *meshFactory;
 		TextureFactory		*textureFactory;
+        Pipeline            *currentPipeline;
 
         Window              *window;
 
         bool getSupportedFeature(unsigned int feature);
 
         std::map<unsigned int, bool> supportedFeatures;
+
+    private:
+	    static void staticInit();
     };
 }

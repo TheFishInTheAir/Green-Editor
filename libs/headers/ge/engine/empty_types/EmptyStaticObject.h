@@ -1,7 +1,7 @@
 #pragma once
-#include "engine/types/ModelMat.h"
+#include <ge/engine/types/ModelMat.h>
+#include <ge/graphics/empty_types/MeshData.h>
 #include <string>
-#include "graphics/empty_types/MeshData.h"
 
 namespace ge
 {

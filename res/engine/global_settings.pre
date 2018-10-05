@@ -1,16 +1,23 @@
 #ifndef GLOBAL_SETTINGS 
 #define GLOBAL_SETTINGS
-//Render IDs
-#define RENDER 0
 
-#define PRE_RENDER 1
-#define POST_RENDER 2
+//Important globals
+#define RENDERER_INSTANCE ge_renderer_instance
 
-#define UPDATE 3
+
+
+//Runtime Groups IDs
+#define UPDATE 0
+
+#define PIPELINE_ROUTER_RG 4
+//NOTE: render is old, but there were so many errors I didn't want to bother removing it...
+#define RENDER 5
 
 #define LOADER 6
 
-
+//Runtime IDs
+#define RUNTIME_MAIN    "main"
+#define RUNTIME_RENDER  "render"
 
 
 
@@ -21,8 +28,23 @@
 #define UV_POSITION     2
 
 //STANDARD IMAGE LOCATIONS
-#define ALBEDO_REF ge_albedo_map //Todo: ID instead of name
+#define ALBEDO_LOC   0
+#define DIFFUSE_LOC   0
+#define SPECULAR_LOC 1
+#define ROUGHNESS_LOC 1 //NOTE: there can't be specular and roughness in the same shader.
+#define GLOSSY_LOC   1
+#define EMISSION_LOC 2
+#define NORMAL_LOC   3
+#define BUMP_LOC     4
+#define PARRALAX_LOC 4
+
+#define A_SHADOW_LOC_START 5
+
+
+#define ALBEDO_REF   ge_albedo_map //Todo: ID instead of name
 #define SPECULAR_REF ge_specular_map //Todo: ID instead of name
+#define NORMAL_REF   ge_normal_map //Todo: ID instead of name
+#define ROUGHNESS_REF   ge_roughness_map //Todo: ID instead of name
 
 //STANDARDS
 #define FRAG_OUT_COL ge_fragment_colour
@@ -32,15 +54,47 @@
 
 #define MVP			 ge_mvp
 #define MVP_M		 ge_mvp_m
+#define MVP_V		 ge_mvp_v
+#define MVP_P		 ge_mvp_p
 #define MVP_VP		 ge_mvp_vp
 
 #define MVP_M_VP	 ge_mvp_vp * ge_mvp_m
+#define MVP_M_V_P	 ge_mvp_p * ge_mvp_v * ge_mvp_m
+
+//SHADOWS
+#define A_SHADOW_MAX 4
+#define A_SHADOW_SPACE_IN  ge_angle_shadows_SPACE_in_uniform
+#define A_SHADOW_MAP_IN  ge_angle_shadows_MAP_in_uniform
+#define A_SHADOW_NUM ge_angle_shadows_in_num_uniform
 
 //LIGHTING
 
+#define LIGHT_POINT        0
+#define LIGHT_DIRECTIONAL  1
+#define LIGHT_SPOT         2
+
+#define LIGHT_DIR_IN        ge_light_dir_in_uniform
+#define LIGHT_DIR_NUM       ge_light_dir_in_num_uniform
+#define LIGHT_DIR_MAX       2
+
+#define LIGHT_POINT_IN      ge_light_point_in_uniform
+#define LIGHT_POINT_NUM     ge_light_point_in_num_uniform
+#define LIGHT_POINT_MAX     16
+
+#define LIGHT_SPOT_IN       ge_light_spot_in_uniform
+#define LIGHT_SPOT_NUM      ge_light_spot_in_num_uniform
+#define LIGHT_SPOT_MAX      8
+
+
+//NOTE: OLD
 #define MAX_POINT_LIGHTS	   	6
 #define MAX_SPOT_LIGHTS			4
 #define MAX_DIRECTIONAL_LIGHTS	1
+
+//PREDEFINED UNIFORMS
+
+#define GE_TIME                         ge_predef_time
+
 
 //UNIFORMS
 
@@ -52,6 +106,14 @@
 #define UNIFORM_DIRECTIONAL_LIGHTS_IN	ge_directional_lights_in
 
 #define UNIFORM_SOLID_COL               ge_solid_colour
+
+//THIS IS CUBEMAP 0
+#define SKYBOX                          ge_skybox_in
+#define SKYBOX_LOC                      0
+
+//#define CUBEMAP_0                       ge_cube_map_0_in
+#define CUBEMAP_1                       ge_cube_map_1_in
+#define CUBEMAP_2                       ge_cube_map_2_in
 
 
 
@@ -69,5 +131,66 @@
 
 #define GE_ENTITES_GM entities
 #define CURRENT_CAMERA ge_current_camera
+#define CURRENT_SKYBOX ge_current_skybox
+
+
+
+#ifdef DEF_GS_TABLE
+#include <unordered_map>
+#include <string>
+
+struct ge_global_settings //NOTE: TOTAL HACK
+{
+    static std::unordered_map<std::string, std::string> map;
+};
+
+#ifdef DEF_GS_TABLE_IMPLEMENTATION
+
+#define GE_STRFY(m) #m
+#define GE_DBL_STRFY(m) GE_STRFY(m)
+
+std::unordered_map<std::string, std::string> ge_global_settings::map = {
+    {GE_STRFY(RENDER),GE_DBL_STRFY(RENDER)},
+    {GE_STRFY(PRE_RENDER),GE_DBL_STRFY(PRE_RENDER)},
+    {GE_STRFY(POST_RENDER),GE_DBL_STRFY(POST_RENDER)},
+    {GE_STRFY(UPDATE),GE_DBL_STRFY(UPDATE)},
+    {GE_STRFY(LOADER),GE_DBL_STRFY(LOADER)},
+
+    //uniforms NOTE: there are more, but I don't see the point in adding them as they are bad...
+
+    {GE_STRFY(ALBEDO_REF),GE_DBL_STRFY(ALBEDO_REF)},
+    {GE_STRFY(SPECULAR_REF),GE_DBL_STRFY(SPECULAR_REF)},
+    {GE_STRFY(ALBEDO_LOC),GE_DBL_STRFY(ALBEDO_LOC)},
+    {GE_STRFY(SPECULAR_LOC),GE_DBL_STRFY(SPECULAR_LOC)},
+    {GE_STRFY(FRAG_OUT_COL),GE_DBL_STRFY(FRAG_OUT_COL)},
+    {GE_STRFY(CAMERA_DIR),GE_DBL_STRFY(CAMERA_DIR)},
+    {GE_STRFY(CAMERA_POS),GE_DBL_STRFY(CAMERA_POS)},
+    {GE_STRFY(GE_TIME),GE_DBL_STRFY(GE_TIME)},
+    {GE_STRFY(MVP),GE_DBL_STRFY(MVP)},
+    {GE_STRFY(MVP_M),GE_DBL_STRFY(MVP_M)},
+    {GE_STRFY(MVP_V),GE_DBL_STRFY(MVP_V)},
+    {GE_STRFY(MVP_P),GE_DBL_STRFY(MVP_P)},
+    {GE_STRFY(MVP_VP),GE_DBL_STRFY(MVP_VP)},
+    {GE_STRFY(SKYBOX),GE_DBL_STRFY(SKYBOX)},
+    {GE_STRFY(CUBEMAP_1), GE_DBL_STRFY(CUBEMAP_1)},
+    {GE_STRFY(CUBEMAP_2), GE_DBL_STRFY(CUBEMAP_2)},
+    {GE_STRFY(LIGHT_DIR_IN),  GE_DBL_STRFY(LIGHT_DIR_IN)},
+    {GE_STRFY(LIGHT_DIR_NUM), GE_DBL_STRFY(LIGHT_DIR_NUM)},
+    {GE_STRFY(LIGHT_DIR_MAX),GE_DBL_STRFY(LIGHT_DIR_MAX)},
+    {GE_STRFY(LIGHT_POINT_IN),  GE_DBL_STRFY(LIGHT_POINT_IN)},
+    {GE_STRFY(LIGHT_POINT_NUM), GE_DBL_STRFY(LIGHT_POINT_NUM)},
+    {GE_STRFY(LIGHT_POINT_MAX),GE_DBL_STRFY(LIGHT_POINT_MAX)},
+    {GE_STRFY(LIGHT_SPOT_IN),  GE_DBL_STRFY(LIGHT_SPOT_IN)},
+    {GE_STRFY(LIGHT_SPOT_NUM), GE_DBL_STRFY(LIGHT_SPOT_NUM)},
+    {GE_STRFY(LIGHT_SPOT_MAX),GE_DBL_STRFY(LIGHT_SPOT_MAX)},
+    {GE_STRFY(A_SHADOW_SPACE_IN),  GE_DBL_STRFY(A_SHADOW_SPACE_IN)},
+    {GE_STRFY(A_SHADOW_MAP_IN), GE_DBL_STRFY(A_SHADOW_MAP_IN)},
+    {GE_STRFY(A_SHADOW_MAX),GE_DBL_STRFY(A_SHADOW_MAX)},
+    {GE_STRFY(A_SHADOW_NUM),GE_DBL_STRFY(A_SHADOW_NUM)}
+};
+
+#endif
+
+#endif
 
 #endif

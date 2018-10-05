@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <graphics/types/Window.h>
+#include <ge/graphics/types/Window.h>
 #include "KeyboardKey.h"
 
 namespace ge

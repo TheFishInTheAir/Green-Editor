@@ -1,11 +1,11 @@
 #pragma once
-#include "graphics/types/ShaderGroup.h"
-#include "graphics/meshes/TriangleMesh.h"
-#include <engine/defaults/StaticObject.h>
+#include <ge/graphics/types/ShaderGroup.h>
+#include <ge/graphics/meshes/TriangleMesh.h>
+#include <ge/engine/defaults/StaticObject.h>
 
-#include "runtime/Runtime.h"
-#include "graphics/Camera.h"
-#include "graphics/types/CubeMap.h"
+#include <ge/runtime/Runtime.h>
+#include <ge/graphics/Camera.h>
+#include <ge/graphics/types/CubeMap.h>
 
 
 namespace ge
@@ -37,9 +37,9 @@ namespace ge
 
 		void clear();
 
-		ge_START_CYCLE_HANDLER(SkyBox)
+		/*ge_START_CYCLE_HANDLER(SkyBox)
 			ge_GENERATE_TRAMPOLINE(render, RENDER)
-		ge_END_CYCLE_HANDLER
+		ge_END_CYCLE_HANDLER*/
 
 	private:
 		Uniform* u_vp;

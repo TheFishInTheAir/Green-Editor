@@ -1,0 +1,8 @@
+{
+  "u":
+  [
+    "mvp_vp"
+  ],
+  "vertex":"demo/shaders/wave.vert",
+  "fragment":"demo/shaders/wave.frag"
+}

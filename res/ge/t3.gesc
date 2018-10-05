@@ -1,0 +1,389 @@
+{
+  "entities": [
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": -3.1999995708465576,
+                "y": 1.9000028371810913,
+                "z": 0.2000000774860382
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "PointLightComponent",
+          "vars": [
+            {
+              "name": "Colour",
+              "value": {
+                "x": 1.0,
+                "y": 0.9315963983535767,
+                "z": 0.60326087474823
+              }
+            },
+            {
+              "name": "Constant Attenuation",
+              "value": 1.0
+            },
+            {
+              "name": "Linear Attenuation",
+              "value": 0.09000000357627869
+            },
+            {
+              "name": "Quadratic Attenuation",
+              "value": 0.029999999329447746
+            },
+            {
+              "name": "Debug Box",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "name": "light 2"
+    },
+    {
+      "components": [
+        {
+          "type": "PointLightComponent",
+          "vars": [
+            {
+              "name": "Colour",
+              "value": {
+                "x": 0.8097826242446899,
+                "y": 0.9803223609924316,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Constant Attenuation",
+              "value": 1.0
+            },
+            {
+              "name": "Linear Attenuation",
+              "value": 0.09000000357627869
+            },
+            {
+              "name": "Quadratic Attenuation",
+              "value": 0.03999999910593033
+            },
+            {
+              "name": "Debug Box",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 1.7900002002716064,
+                "y": 1.8000049591064453,
+                "z": -3.100010871887207
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "name": "light 1"
+    },
+    {
+      "components": [
+        {
+          "type": "PointLightComponent",
+          "vars": [
+            {
+              "name": "Colour",
+              "value": {
+                "x": 0.885869562625885,
+                "y": 0.9645815491676331,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Constant Attenuation",
+              "value": 1.0
+            },
+            {
+              "name": "Linear Attenuation",
+              "value": 0.09000000357627869
+            },
+            {
+              "name": "Quadratic Attenuation",
+              "value": 0.03999999910593033
+            },
+            {
+              "name": "Debug Box",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": -0.5,
+                "y": 1.8000011444091797,
+                "z": -2.799999475479126
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        }
+      ],
+      "name": "light 3"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.0,
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": false
+            }
+          ]
+        },
+        {
+          "type": "HLMeshComponent",
+          "vars": [
+            {
+              "name": "Sketch Material",
+              "value": "OnyxTile"
+            },
+            {
+              "name": "Sketch Mesh",
+              "value": "demo/meshes/room.obj"
+            }
+          ]
+        }
+      ],
+      "name": "test_ent_floor"
+    },
+    {
+      "components": [
+        {
+          "type": "TransformComponent",
+          "vars": [
+            {
+              "name": "Position",
+              "value": {
+                "x": 13.581770896911621,
+                "y": 6.586542129516602,
+                "z": 11.09087085723877
+              }
+            },
+            {
+              "name": "Is Dynamic",
+              "value": false
+            },
+            {
+              "name": "Scale",
+              "value": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              }
+            },
+            {
+              "name": "Rotation",
+              "value": {
+                "w": 0.8960084915161133,
+                "x": -0.038146257400512695,
+                "y": 0.44199490547180176,
+                "z": 0.018817290663719177
+              }
+            },
+            {
+              "name": "Should Recalculate",
+              "value": true
+            }
+          ]
+        },
+        {
+          "type": "CameraComponent",
+          "vars": [
+            {
+              "name": "FOV",
+              "value": 0.7853981852531433
+            },
+            {
+              "name": "Near Cull Plane",
+              "value": 0.009999999776482582
+            },
+            {
+              "name": "Far Cull Plane",
+              "value": 100.0
+            }
+          ]
+        },
+        {
+          "type": "FreeCamControllerComponent",
+          "vars": [
+            {
+              "name": "Look Speed",
+              "value": 15.0
+            },
+            {
+              "name": "Move Speed",
+              "value": 35.0
+            }
+          ]
+        }
+      ],
+      "name": "main_cam"
+    }
+  ],
+  "preloaded_resources": {
+    "cubemaps": [
+      {
+        "tag": "forest",
+        "xneg": "test_skybox/forest/negx.jpg",
+        "xpos": "test_skybox/forest/posx.jpg",
+        "yneg": "test_skybox/forest/negy.jpg",
+        "ypos": "test_skybox/forest/posy.jpg",
+        "zneg": "test_skybox/forest/negz.jpg",
+        "zpos": "test_skybox/forest/posz.jpg"
+      }
+    ],
+    "materials": [
+      "demo/mats/vsk.gmat",
+      "demo/mats/tile.gmat"
+    ],
+    "meshes": [
+      "demo/meshes/VSK_S.obj",
+      "demo/meshes/room.obj",
+      "demo/meshes/cube.obj",
+      "demo/meshes/plane.obj",
+      "demo/meshes/subdiv_plane.obj"
+    ],
+    "shaders": [
+      "engine/defaults/forward/lit/phong.gesm",
+      "engine/defaults/forward/water/simple.gesm",
+      "engine/defaults/forward/skybox/skybox.gesm"
+    ],
+    "textures": [
+      "demo/textures/ONYX_COL.jpg",
+      "demo/textures/VSK_COL.png",
+      "demo/textures/VSK_ROUGH.png",
+      "demo/textures/ONYX_REFL.jpg"
+    ]
+  },
+  "skybox": "forest",
+  "version": {
+    "major": 1,
+    "minor": 2
+  }
+}

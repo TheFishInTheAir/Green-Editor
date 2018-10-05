@@ -1,0 +1,20 @@
+{
+	"vertex":"engine/defaults/forward/skybox/skybox.vert",
+	"fragment":"engine/defaults/forward/skybox/skybox.frag",
+
+    "uniforms":
+    [
+        {
+            "name":"MVP_V",
+            "type":"mat4"
+        },
+        {
+            "name":"MVP_P",
+            "type":"mat4"
+        },
+        {
+            "name":"SKYBOX",
+            "type":"int"
+        }
+    ]
+}

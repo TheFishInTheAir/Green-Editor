@@ -5,10 +5,10 @@
 #pragma once
 
 #include <string>
-#include <graphics/types/Shader.h>
-#include <graphics/enums/ShaderType.h>
-#include <error/Error.h>
-#include <graphics/types/ShaderGroup.h>
+#include <ge/graphics/types/Shader.h>
+#include <ge/graphics/enums/ShaderType.h>
+#include <ge/error/Error.h>
+#include <ge/graphics/types/ShaderGroup.h>
 #include <memory>
 
 namespace ge

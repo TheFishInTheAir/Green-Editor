@@ -17,10 +17,6 @@ namespace ge
 
             std::vector<std::string> shaders;
 
-
-
-
-
         };
     }
 }

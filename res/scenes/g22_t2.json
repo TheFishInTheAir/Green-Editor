@@ -1,0 +1,291 @@
+{
+    "version":
+    {
+        "major":1,
+        "minor":2
+    },
+
+    "skybox":"city",
+
+    "preloaded_resources":
+    {
+        "textures":
+        [
+            "demo/textures/ONYX_COL.jpg",
+            "demo/textures/VSK_COL.png",
+
+            "demo/textures/ONYX_REFL.jpg",
+            "demo/textures/VSK_ROUGH.png"
+
+        ],
+        "meshes":
+        [
+            "demo/meshes/cube.obj",
+            "demo/meshes/VSK_S.obj",
+            "demo/meshes/plane.obj"
+
+        ],
+        "shaders":
+        [
+            "engine/defaults/forward/unlit/textured.gesm",
+            "engine/defaults/forward/test/Trippy.gesm",
+            "engine/defaults/forward/test/Ice.gesm",
+            "engine/defaults/forward/test/Gloss.gesm",
+            "engine/defaults/forward/test/Explode.gesm",
+            "engine/defaults/forward/lit/phong.gesm",
+
+            "engine/defaults/forward/skybox/skybox.gesm"
+
+        ],
+        "cubemaps":
+        [
+            {
+                "tag": "city",
+                "xpos": "test_skybox/city/posx.jpg",
+                "xneg": "test_skybox/city/negx.jpg",
+
+                "ypos": "test_skybox/city/posy.jpg",
+                "yneg": "test_skybox/city/negy.jpg",
+
+                "zpos": "test_skybox/city/posz.jpg",
+                "zneg": "test_skybox/city/negz.jpg"
+            }
+        ]
+    },
+
+    "static_objects":
+    [
+        {
+            "model":{"pos_x":0,"pos_y":0,"pos_z":0,
+                     "scale_x":0.5,"scale_y":2,"scale_z":0.5},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":-1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":1.75,"pos_z":0,
+                     "scale_x":1,"scale_y":1,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/VSK_COL.png",
+                "specular":"demo/textures/VSK_ROUGH.png",
+                "custom_shader" : "engine/defaults/forward/test/Trippy.gesm"
+            },
+            "mesh" : "demo/meshes/VSK_S.obj"
+        },
+
+
+
+        {
+            "model":{"pos_x":0,"pos_y":0,"pos_z":-3,
+                     "scale_x":0.5,"scale_y":2,"scale_z":0.5},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":-1.125,"pos_z":-3,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":1.125,"pos_z":-3,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":1.75,"pos_z":-3,
+                     "scale_x":1,"scale_y":1,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/VSK_COL.png",
+                "specular":"demo/textures/VSK_ROUGH.png",
+                "custom_shader" : "engine/defaults/forward/test/Ice.gesm"
+            },
+            "mesh" : "demo/meshes/VSK_S.obj"
+        },
+
+
+
+
+
+
+
+
+
+
+        {
+            "model":{"pos_x":3,"pos_y":0,"pos_z":0,
+                     "scale_x":0.5,"scale_y":2,"scale_z":0.5},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":3,"pos_y":-1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":3,"pos_y":1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":3,"pos_y":1.75,"pos_z":0,
+                     "scale_x":1,"scale_y":1,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/VSK_COL.png",
+                "specular":"demo/textures/VSK_ROUGH.png",
+                "custom_shader" : "engine/defaults/forward/test/Explode.gesm"
+            },
+            "mesh" : "demo/meshes/VSK_S.obj"
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "model":{"pos_x":-3,"pos_y":0,"pos_z":0,
+                     "scale_x":0.5,"scale_y":2,"scale_z":0.5},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":-3,"pos_y":-1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":-3,"pos_y":1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/unlit/textured.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":-3,"pos_y":1.75,"pos_z":0,
+                     "scale_x":1,"scale_y":1,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/VSK_COL.png",
+                "specular":"demo/textures/VSK_ROUGH.png",
+                "custom_shader" : "engine/defaults/forward/test/Gloss.gesm"
+            },
+            "mesh" : "demo/meshes/VSK_S.obj"
+        }
+
+
+    ],
+    "lights":
+    [
+        {
+            "light_type":"directional",
+
+            "rotation": {"x":0, "y":0, "z":0},
+            "colour"  : {"r":0, "g":0, "b":0}
+
+        }
+    ]
+
+}

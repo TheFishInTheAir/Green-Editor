@@ -1,0 +1,21 @@
+{
+    "merge":"engine/defaults/forward/unlit/textured.glsl",
+
+    "merge_info":
+    [
+        "VERTEX",
+        "FRAGMENT"
+    ],
+
+    "uniforms":
+    [
+        {
+            "name":"MVP",
+            "type":"mat4"
+        },
+        {
+            "name":"ALBEDO_REF",
+            "type":"int"
+        }
+    ]
+}

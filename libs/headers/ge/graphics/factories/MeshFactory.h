@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <graphics/meshes/TriangleMesh.h>
+#include <ge/graphics/meshes/TriangleMesh.h>
 
 namespace ge
 {

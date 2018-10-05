@@ -1,11 +1,11 @@
 #pragma once
-#include "graphics/types/Uniform.h"
-#include "graphics/Camera.h"
-#include "util/PreprocessorUtil.h"
+#include <ge/graphics/types/Uniform.h>
+#include <ge/graphics/Camera.h>
+#include <ge/util/PreprocessorUtil.h>
 
-#include "runtime/Runtime.h"
+#include <ge/runtime/Runtime.h>
 #include <engine/global_settings.pre>
-#include "graphics/meshes/TriangleMesh.h"
+#include <ge/graphics/meshes/TriangleMesh.h>
 
 namespace ge
 {

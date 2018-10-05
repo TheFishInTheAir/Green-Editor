@@ -17,6 +17,19 @@ endif()
 
 list(APPEND Green_Engine_INCLUDES ${CMAKE_CURRENT_SOURCE_DIR}/libs/headers) #Define the Green Engine include directories
 
+#if(WIN32)
+#	list(APPEND Green_Engine_LIBS ${CMAKE_CURRENT_SOURCE_DIR}/libs/compiled/win/OpenAL32.lib)
+#else()
+	#set(OPENALDIR "C:/Program Files (x86)/OpenAL")
+message("TEST: $ENV{OPENALDIR}")
+find_package(OpenAL REQUIRED)
+if (OPENAL_FOUND)
+	message("${OPENAL_INCLUDE_DIR} and ${OPENAL_LIBRARY} TEST: ${ALUT_INCLUDE_DIR}\n")
+	list(APPEND Green_Engine_INCLUDES ${OPENAL_INCLUDE_DIR})
+	list(APPEND Green_Engine_LIBS ${OPENAL_LIBRARY})
+endif ()
+#endif()
+
 
 
 find_package(OpenGL REQUIRED)
@@ -41,9 +54,7 @@ find_package(GLFWosd REQUIRED)
 if (GLFW_FOUND)
     message("${GLFW_INCLUDE_DIR} and ${GLFW_LIBRARY}\n")
     list(APPEND Green_Engine_INCLUDES ${GLFW_INCLUDE_DIR})
-
     list(APPEND Green_Engine_LIBS ${GLFW_LIBRARY})
-
 
 endif()
 
@@ -105,10 +116,22 @@ endif()
 		set(ASSIMP_ROOT_DIR "C:\\Program Files\\Assimp")
 
 	else()
-
+        list(APPEND Green_Engine_LIBS ${CMAKE_CURRENT_SOURCE_DIR}/libs/compiled/libGECON_SERVER.a )
 	endif()
 
 	find_package(assimp REQUIRED)
+
+    #set(Boost_USE_STATIC_LIBS ON)
+    #set(Boost_USE_MULTITHREADED ON)
+    #set(Boost_USE_STATIC_RUNTIME_LIBS OFF)
+
+    #find_package(Boost 1.64.0 REQUIRED COMPONENTS system filesystem)
+
+
+    #if(Boost_FOUND)
+    #    list(APPEND Green_Engine_INCLUDES ${Boost_INCLUDE_DIRS})
+    #    list(APPEND Green_Engine_LIBS ${Boost_LIBRARIES})
+    #endif()
 
 	if(ASSIMP_LIBRARY_DIR)
 		message("assimp: ${ASSIMP_INCLUDE_DIR}")

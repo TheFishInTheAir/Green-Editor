@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include <error/Error.h>
-#include <graphics/types/ShaderGroup.h>
+#include <ge/error/Error.h>
+#include <ge/graphics/types/ShaderGroup.h>
 
 
 namespace ge

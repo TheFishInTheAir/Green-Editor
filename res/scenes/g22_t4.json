@@ -1,0 +1,131 @@
+{
+    "version":
+    {
+        "major":1,
+        "minor":2
+    },
+
+    "skybox":"forest",
+
+    "preloaded_resources":
+    {
+        "textures":
+        [
+            "demo/textures/ONYX_COL.jpg",
+            "demo/textures/VSK_COL.png",
+
+            "demo/textures/ONYX_REFL.jpg",
+            "demo/textures/VSK_ROUGH.png"
+
+        ],
+        "meshes":
+        [
+            "demo/meshes/cube.obj",
+            "demo/meshes/VSK_S.obj",
+            "demo/meshes/plane.obj",
+            "demo/meshes/subdiv_plane.obj"
+
+        ],
+        "shaders":
+        [
+            "engine/defaults/forward/lit/phong.gesm",
+            "engine/defaults/forward/water/simple.gesm",
+            "engine/defaults/forward/skybox/skybox.gesm"
+
+        ],
+        "materials":
+        [
+            "demo/mats/vsk.gmat",
+            "demo/mats/tile.gmat"
+        ],
+        "cubemaps":
+        [
+            {
+                "tag": "forest",
+                "xpos": "test_skybox/forest/posx.jpg",
+                "xneg": "test_skybox/forest/negx.jpg",
+
+                "ypos": "test_skybox/forest/posy.jpg",
+                "yneg": "test_skybox/forest/negy.jpg",
+
+                "zpos": "test_skybox/forest/posz.jpg",
+                "zneg": "test_skybox/forest/negz.jpg"
+            }
+        ]
+    },
+
+    "static_objects":
+    [
+        {
+            "model":{"pos_x":0,"pos_y":0,"pos_z":0,
+                     "scale_x":0.5,"scale_y":2,"scale_z":0.5},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/lit/phong.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":-1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/lit/phong.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":1.125,"pos_z":0,
+                     "scale_x":1,"scale_y":0.25,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/ONYX_COL.jpg",
+                "specular":"demo/textures/ONYX_REFL.jpg",
+                "custom_shader" : "engine/defaults/forward/lit/phong.gesm"
+            },
+            "mesh" : "demo/meshes/cube.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":1.75,"pos_z":0,
+                     "scale_x":1,"scale_y":1,"scale_z":1},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/VSK_COL.png",
+                "specular":"demo/textures/VSK_ROUGH.png",
+                "custom_shader" : "engine/defaults/forward/lit/phong.gesm"
+            },
+            "mesh" : "demo/meshes/VSK_S.obj"
+        },
+        {
+            "model":{"pos_x":0,"pos_y":-1,"pos_z":0,
+                     "scale_x":25,"scale_y":1,"scale_z":25},
+            "material":{
+                "lighting_type":"unlit",
+                "override_tex": true,
+                "albedo":"demo/textures/VSK_COL.png",
+                "specular":"demo/textures/VSK_ROUGH.png",
+                "custom_shader" : "engine/defaults/forward/water/simple.gesm"
+            },
+            "mesh" : "demo/meshes/subdiv_plane.obj"
+        }
+    ],
+    "lights":
+    [
+        {
+            "light_type":"directional",
+
+            "rotation": {"x":0, "y":0, "z":0},
+            "colour"  : {"r":0, "g":0, "b":0}
+
+        }
+    ]
+
+}

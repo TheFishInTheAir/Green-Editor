@@ -4,15 +4,21 @@
 
 #pragma once
 #include <forward_list>
-#include "graphics/types/Texture.h"
-#include "graphics/empty_types/MeshData.h"
-#include "graphics/types/Shader.h"
+#include <ge/graphics/types/Texture.h>
+#include <ge/graphics/empty_types/MeshData.h>
+#include <ge/graphics/types/Shader.h>
 #include <memory>
-#include "graphics/types/Image.h"
 #include <unordered_map>
-#include "graphics/empty_types/Scene.h"
-#include "graphics/meshes/TriangleMesh.h"
-#include "engine/defaults/SkyBox.h"
+#include <list>
+#include <ge/graphics/types/Image.h>
+#include <ge/graphics/empty_types/Scene.h>
+#include <ge/graphics/meshes/TriangleMesh.h>
+#include <ge/entity/Entity.h>
+#include <ge/graphics/types/lights/LightDirectional.h>
+#include <ge/graphics/types/lights/LightPoint.h>
+#include <ge/graphics/types/lights/LightSpot.h>
+#include <ge/graphics/types/lights/AngleShadow.h>
+#include <ge/graphics/types/Material.h>
 
 
 namespace ge
@@ -22,9 +28,13 @@ namespace ge
 	struct Scene
     {
 
+        static Scene* currentScene;
+
 		void loadScene(Empty::Scene);
 
-		static void init();
+		void instantiateScene();
+
+		std::string url;
 
 		//Contains:
     	/*
@@ -38,21 +48,28 @@ namespace ge
 		 * 
     	 */
 
-		std::unordered_map<std::string, std::shared_ptr<ge::Texture>>		textures;
-		std::unordered_map<std::string, std::shared_ptr<ge::CubeMap>>		cubemaps;
+		std::unordered_map<std::string, std::shared_ptr<ge::Texture>>			textures;
+		std::unordered_map<std::string, std::shared_ptr<ge::CubeMap>>			cubemaps;
 
 		std::unordered_map<std::string, std::shared_ptr<ge::Empty::MeshData>>	meshes;
+		std::unordered_map<std::string, ge::Material>							materials;
+
 		std::unordered_map<std::string, std::shared_ptr<ge::ShaderGroup>>		shaderGroups;
 		std::unordered_map<std::string, std::shared_ptr<ge::Shader>>			shaders;
+		std::unordered_map<std::string, std::shared_ptr<ge::Audio::AudioClip>>	audioClips;
+        
+		std::forward_list<Entity*>                                          	uninstantiatedEntities; //Should fix this
+        
+        Entity* skybox;
+		std::string skyboxCubemapName = "";
 
 
-		std::forward_list<void*>											SuperSketchyEntityHandler; //Should fix this I think I might of actually...
 
-		
-
-		//TODO: create light class/struct @UNFINISHED
-
-		//std::vector<Light> lights;
+		std::list<AngleShadow*>			shadows;
+	
+		std::list<LightDirectional*> 	directionalLights;
+		std::list<LightPoint*> 			pointLights;
+		std::list<LightSpot*> 			spotLights;
 
 	};
 }

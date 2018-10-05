@@ -5,7 +5,7 @@
 #pragma once
 namespace ge
 {
-    namespace DataType
+    namespace BasicDataType
     {
         typedef enum
         {

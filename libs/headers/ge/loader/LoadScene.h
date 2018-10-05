@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include "error/Error.h"
-#include <graphics/empty_types/Scene.h>
+#include <ge/error/Error.h>
+#include <ge/graphics/empty_types/Scene.h>
 
 
 namespace ge

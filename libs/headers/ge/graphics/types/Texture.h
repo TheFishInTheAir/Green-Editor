@@ -4,14 +4,17 @@
 
 #pragma once
 
-#include <graphics/enums/TextureFilterType.h>
-#include <graphics/enums/ColourModelType.h>
-#include <error/Error.h>
+#include <ge/graphics/enums/TextureFilterType.h>
+#include <ge/graphics/enums/ColourModelType.h>
+#include <ge/error/Error.h>
 
 namespace ge
 {
     struct Texture
     {
+        //NOTE: we should maybe have a thing here for the name/url
+        std::string url;
+        
         int getWidth() const;
         int getHeight() const;
 

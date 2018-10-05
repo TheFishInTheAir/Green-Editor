@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include <graphics/enums/BufferMemoryType.h>
+#include <ge/graphics/enums/BufferMemoryType.h>
 #include <cstddef>
 
 namespace ge

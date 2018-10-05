@@ -1,0 +1,162 @@
+{
+  "preloaded_resources": {
+    "textures": [
+      "demo/textures/ONYX_COL.jpg",
+      "demo/textures/ONYX_REFL.jpg",
+
+      "demo/textures/VSK_COL.png",
+      "demo/textures/VSK_ROUGH.png",
+
+      "demo/textures/WALL1_COL.jpg",
+      "demo/textures/WALL1_GLOSS_BW.jpg"
+    ],
+
+    "cubemaps": [
+      {
+        "tag": "forest",
+        "xpos": "test_skybox/forest/posx.jpg",
+        "xneg": "test_skybox/forest/negx.jpg",
+
+        "ypos": "test_skybox/forest/posy.jpg",
+        "yneg": "test_skybox/forest/negy.jpg",
+
+        "zpos": "test_skybox/forest/posz.jpg",
+        "zneg": "test_skybox/forest/negz.jpg"
+      }
+    ],
+
+    "meshes": [
+      "demo/meshes/VSK.obj",
+      "demo/meshes/plane.obj",
+      "demo/meshes/wall1.obj"
+
+    ],
+    "shaders": [
+      "demo/shaders/wave.gesm"
+    ]
+  },
+
+  "skybox": "forest",
+
+  "static_objects": [
+    {
+      "comment": "this is a skull TODO: proper json comments",
+
+      "model": {
+        "scale_x": 0.02,
+        "scale_y": 0.02,
+        "scale_z": 0.02,
+        "pos_x": 0,
+        "pos_y": 2,
+        "pos_z": 0
+      },
+      "material": {
+        "lighting_type": "phong",
+        "override_tex": true,
+        "albedo": "demo/textures/VSK_COL.png",
+        "specular": "demo/textures/VSK_ROUGH.png"
+      },
+      "mesh": "demo/meshes/VSK.obj"
+    },
+    {
+      "comment": "this is a plane TODO: proper json comments",
+
+      "model": {
+        "scale_x": 16,
+        "scale_y": 1,
+        "scale_z": 16,
+        "pos_x": 0,
+        "pos_y": -1,
+        "pos_z": 0
+      },
+      "uv_scale": 5,
+
+      "material": {
+        "lighting_type": "phong",
+        "override_tex": true,
+        "custom_shader": "demo/shaders/wave.gesm",
+        "albedo": "demo/textures/ONYX_COL.jpg",
+        "specular": "demo/textures/ONYX_REFL.jpg"
+      },
+      "mesh": "demo/meshes/plane.obj"
+
+    },
+    {
+      "comment": "this is a wall TODO: proper json comments",
+
+      "model": {
+        "pos_x": 0,
+        "pos_y": 0,
+        "pos_z": 16,
+        "rot_x": 1
+      },
+      "material": {
+        "lighting_type": "phong",
+        "override_tex": true,
+        "albedo": "demo/textures/WALL1_COL.jpg",
+        "specular": "demo/textures/WALL1_GLOSS_BW.jpg"
+      },
+      "mesh": "demo/meshes/wall1.obj"
+
+    },
+    {
+      "comment": "this is a wall TODO: proper json comments",
+
+      "model": {
+        "pos_x": 0,
+        "pos_y": 0,
+        "pos_z": -16
+      },
+      "material": {
+        "lighting_type": "phong",
+        "override_tex": true,
+        "albedo": "demo/textures/WALL1_COL.jpg",
+        "specular": "demo/textures/WALL1_GLOSS_BW.jpg"
+      },
+      "mesh": "demo/meshes/wall1.obj"
+
+    },
+
+
+    {
+      "comment": "this is a wall TODO: proper json comments",
+
+      "model": {
+        "pos_x": 16,
+        "pos_y": 0,
+        "pos_z": 0,
+        "rot_w": 0.707,
+        "rot_y": -0.707
+      },
+      "material": {
+        "lighting_type": "phong",
+        "override_tex": true,
+        "albedo": "demo/textures/WALL1_COL.jpg",
+        "specular": "demo/textures/WALL1_GLOSS_BW.jpg"
+      },
+      "mesh": "demo/meshes/wall1.obj"
+
+    },
+
+
+    {
+      "comment": "this is a wall TODO: proper json comments",
+
+      "model": {
+        "pos_x": -16,
+        "pos_y": 0,
+        "pos_z": 0,
+        "rot_w": 0.707,
+        "rot_y": 0.707
+      },
+      "material": {
+        "lighting_type": "phong",
+        "override_tex": true,
+        "albedo": "demo/textures/WALL1_COL.jpg",
+        "specular": "demo/textures/WALL1_GLOSS_BW.jpg"
+      },
+      "mesh": "demo/meshes/wall1.obj"
+
+    }
+  ]
+}

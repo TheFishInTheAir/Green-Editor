@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include <error/Error.h>
-#include <graphics/meshes/TriangleMesh.h>
+#include <ge/error/Error.h>
+#include <ge/graphics/meshes/TriangleMesh.h>
 
 namespace ge
 {

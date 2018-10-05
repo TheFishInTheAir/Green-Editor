@@ -1,0 +1,21 @@
+{
+	"merge":"engine/defaults/common/depth.glsl",
+
+    "merge_info":
+    [
+        "VERTEX",
+        "FRAGMENT"
+    ],
+
+    "uniforms":
+    [
+        {
+            "name":"MVP_VP",
+            "type":"mat4"
+        },
+        {
+            "name":"MVP_M",
+            "type":"mat4"
+        }
+    ]
+}

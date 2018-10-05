@@ -7,12 +7,51 @@
       "demo/textures/VSK_ROUGH.png"
 
     ],
+
+    "cubemaps": [
+      {
+        "tag": "skybox_1",
+        "xpos": "test_skybox/posx.jpg",
+        "xneg": "test_skybox/negx.jpg",
+
+        "ypos": "test_skybox/posy.jpg",
+        "yneg": "test_skybox/negy.jpg",
+
+        "zpos": "test_skybox/posz.jpg",
+        "zneg": "test_skybox/negz.jpg"
+      },
+      {
+        "tag": "city",
+        "xpos": "test_skybox/city/posx.jpg",
+        "xneg": "test_skybox/city/negx.jpg",
+
+        "ypos": "test_skybox/city/posy.jpg",
+        "yneg": "test_skybox/city/negy.jpg",
+
+        "zpos": "test_skybox/city/posz.jpg",
+        "zneg": "test_skybox/city/negz.jpg"
+      },
+      {
+        "tag": "forest",
+        "xpos": "test_skybox/forest/posx.jpg",
+        "xneg": "test_skybox/forest/negx.jpg",
+
+        "ypos": "test_skybox/forest/posy.jpg",
+        "yneg": "test_skybox/forest/negy.jpg",
+
+        "zpos": "test_skybox/forest/posz.jpg",
+        "zneg": "test_skybox/forest/negz.jpg"
+      }
+    ],
+
     "meshes": [
       "demo/meshes/VSK.obj",
       "demo/meshes/barrel.obj",
       "demo/meshes/plane.obj"
     ]
   },
+
+  "skybox":"forest",
 
   "static_objects": [
     {

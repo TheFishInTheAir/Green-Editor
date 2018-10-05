@@ -5,13 +5,18 @@
 #pragma once
 #include <vector>
 #include <memory>
-#include "OpenGL/types/GLShader.h"
-
+#include <ge/graphics/types/Shader.h>
+#include <ge/graphics/types/Uniform.h>
+#include <string>
+#include <unordered_map>
 namespace ge
 {
     struct ShaderGroup
     {
-		std::vector<std::shared_ptr<ge::Shader>> shaders;
+		std::vector<std::shared_ptr<ge::Shader>> shaders; //TODO: MAKE GOOD
+        
+        std::unordered_map<std::string, ge::Uniform> uniforms;
+
         virtual ~ShaderGroup()
         {}
     };

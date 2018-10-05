@@ -4,13 +4,15 @@
 
 #pragma once
 
-#include <graphics/enums/ColourModelType.h>
+#include <ge/graphics/enums/ColourModelType.h>
 
 namespace ge
 {
     struct Image
     {
 
+        std::string url;
+        
         ColourModelType::type model;
 
         int width, height;
